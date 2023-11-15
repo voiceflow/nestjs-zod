@@ -1,5 +1,5 @@
-import { createMock } from '@golevelup/ts-jest'
 import { ExecutionContext } from '@nestjs/common'
+import { createMock } from '@voiceflow/test-common/jest'
 import { createZodDto } from './dto'
 import { ZodValidationException } from './exception'
 import { ZodGuard } from './guard'
@@ -12,7 +12,7 @@ describe('ZodGuard', () => {
     password: z.string(),
   })
 
-  const UserDto = class Dto extends createZodDto(UserSchema) {}
+  const UserDto = class Dto extends createZodDto(UserSchema) { }
 
   const contextMock = createMock<ExecutionContext>()
 

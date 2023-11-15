@@ -10,6 +10,7 @@ module.exports = configure({
   extend: {
     rules: {
       '@typescript-eslint/no-unnecessary-condition': 'off',
+      'import/no-unresolved': 'off',
     },
   },
 })

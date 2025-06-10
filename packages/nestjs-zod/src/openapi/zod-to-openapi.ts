@@ -26,6 +26,11 @@ export function zodToOpenAPI(
     object.description = zodType.description
   }
 
+  if (is(zodType, z.ZodDate)) {
+    object.type = 'string'
+    object.format = 'date-time'
+  }
+
   if (is(zodType, z.ZodString)) {
     const { checks } = zodType._def
     object.type = 'string'
